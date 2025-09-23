@@ -22,3 +22,22 @@ class Tag(db.Model):
             #'created_at': self.created_at.isoformat()
             'articles': [article for article in self.articles]  # Liste des titres des articles associés
         }
+
+# Initialisation de la table Tag avec des données de test
+def init_table_tag():
+    # Création de nouveaux tags
+    tag1 = Tag("Science")
+    tag2 = Tag("Technologie")
+    tag3 = Tag("Programmation")
+    tag4 = Tag("Réseaux")
+    tag5 = Tag("Cybersécurité")
+
+    # Ajout des tags à la session
+    db.session.add(tag1)
+    db.session.add(tag2)
+    db.session.add(tag3)
+    db.session.add(tag4)
+    db.session.add(tag5)
+
+    db.session.commit()  # Enregistrement des modifications dans la base de données
+    print(".......... La table Tag a été initialisée avec succès ..........")

@@ -26,4 +26,4 @@ def create_app(config_name=None):
 
 def execute_init_db(app):
     with app.app_context():
-        init_db()
+        init_db() # 

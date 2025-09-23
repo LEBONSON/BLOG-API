@@ -24,3 +24,18 @@ class User(db.Model):
             'email': self.email,
             #'created_at': self.created_at.isoformat()
         }
+    
+ # Initialisation de la table User avec des données de test   
+def init_user_table():
+    # Création d'un nouvel utilisateur
+    user1 = User("lebonson", "lenbonson23@gmail.com","lebonson123") 
+    user2 = User("johndoe", "johndoe@yahoo.fr", "johndoe123")
+    user3 = User("janedoe", "janedoe","janedoe123")
+
+    # Ajout de l'utilisateur à la session
+    db.session.add(user1) 
+    db.session.add(user2)
+    db.session.add(user3)
+    
+    db.session.commit() # Enregistrement des modifications dans la base de données
+    print(".......... La table User a été initialisée avec succès ..........")    
